@@ -798,7 +798,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forwardedRe
   return (
     <Primitive.input
       ref={forwardedRef}
-      {...etc}
       cmdk-input=""
       autoComplete="off"
       autoCorrect="off"
@@ -806,11 +805,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forwardedRe
       aria-autocomplete="list"
       role="combobox"
       aria-expanded={true}
+      type="text"
+      {...etc}
       aria-controls={context.listId}
       aria-labelledby={context.labelId}
       aria-activedescendant={selectedItemId}
       id={context.inputId}
-      type="text"
       value={isControlled ? props.value : search}
       onChange={(e) => {
         if (!isControlled) {
